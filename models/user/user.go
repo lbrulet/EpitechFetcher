@@ -1,4 +1,4 @@
-package models
+package user
 
 type User struct {
 	Login            string       `json:"login"`
@@ -43,45 +43,4 @@ type User struct {
 	GpaInfo          []GpaInfo    `json:"gpa"`
 	Spice            SpiceInfo    `json:"spice"`
 	NsStat           NsStatInfo   `json:"nsstat"`
-}
-
-type Info struct {
-	Value  string `json:"value"`
-	Adm    bool   `json:"adm"`
-	Public bool   `json:"public"`
-}
-
-type UserInfo map[string]Info
-
-type RightsInfo map[string]interface{}
-
-type GroupsInfo struct {
-	Title string `json:"title"`
-	Name  string `json:"name"`
-	Count int    `json:"count"`
-}
-
-type EventsInfo struct {
-	IdEventFailed    string `json:"id_event_failed"`
-	IdUser           string `json:"id_user"`
-	Begin            string `json:"begin"`
-	IdActiviteFailed string `json:"id_activite_failed"`
-}
-
-type GpaInfo struct {
-	Gpa   string `json:"gpa"`
-	Cycle string `json:"cycle"`
-}
-
-type SpiceInfo struct {
-	AvailableSpice string `json:"available_spice"`
-	ConsumedSpice  int    `json:"consumed_spice"`
-}
-
-type NsStatInfo struct {
-	Active    float32 `json:"active"`
-	Idle      int     `json:"idle"`
-	OutActive int     `json:"out_active"`
-	OutIdle   int     `json:"out_idle"`
-	NsLogNorm int     `json:"nslog_norm"`
 }
