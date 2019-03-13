@@ -1,6 +1,6 @@
 package user
 
-type User struct {
+type UserIntra struct {
 	Login            string       `json:"login"`
 	Title            string       `json:"title"`
 	InternalEmail    string       `json:"internal_email"`
@@ -44,3 +44,44 @@ type User struct {
 	Spice            SpiceInfo    `json:"spice"`
 	NsStat           NsStatInfo   `json:"nsstat"`
 }
+
+type EventsInfo struct {
+	IdEventFailed    string `json:"id_event_failed"`
+	IdUser           string `json:"id_user"`
+	Begin            string `json:"begin"`
+	IdActiviteFailed string `json:"id_activite_failed"`
+}
+
+type GpaInfo struct {
+	Gpa   string `json:"gpa"`
+	Cycle string `json:"cycle"`
+}
+
+type GroupsInfo struct {
+	Title string `json:"title"`
+	Name  string `json:"name"`
+	Count int    `json:"count"`
+}
+
+type NsStatInfo struct {
+	Active    float32 `json:"active"`
+	Idle      int     `json:"idle"`
+	OutActive int     `json:"out_active"`
+	OutIdle   int     `json:"out_idle"`
+	NsLogNorm int     `json:"nslog_norm"`
+}
+
+type RightsInfo map[string]interface{}
+
+type SpiceInfo struct {
+	AvailableSpice string `json:"available_spice"`
+	ConsumedSpice  int    `json:"consumed_spice"`
+}
+
+type Info struct {
+	Value  string `json:"value"`
+	Adm    bool   `json:"adm"`
+	Public bool   `json:"public"`
+}
+
+type UserInfo map[string]Info
