@@ -1,24 +1,22 @@
 package EpitechFetcher
 
 import (
-	"fmt"
 	"github.com/lbrulet/EpitechFetcher/models"
+	"github.com/lbrulet/EpitechFetcher/models/user"
 )
 
-func Link(autoLogin, login string) {
+//Link going to fetch all information about the user
+func Link(autoLogin, login string) (*user.UserIntra, *user.CursusIntra, error) {
 	var User models.EpiUser
 	User.AutoLogin = autoLogin
 	User.Login = login
 	if intra, err := FetchIntranetUser(User); err != nil {
-		fmt.Println(err)
+		return nil, nil, err
 	} else {
-		fmt.Println(intra)
-	}
-	if cursus, err := FetchIntranetNote(User); err != nil {
-		fmt.Println(err)
-	} else {
-		for _, elem := range cursus.Modules {
-			fmt.Println(elem)
+		if cursus, err := FetchIntranetNote(User); err != nil {
+			return nil, nil, err
+		} else {
+			return &intra, &cursus, nil
 		}
 	}
 }

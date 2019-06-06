@@ -1,5 +1,9 @@
 package user
 
+func NewUserIntra() UserIntra {
+	return UserIntra{}
+}
+
 type UserIntra struct {
 	Login            string       `json:"login"`
 	Title            string       `json:"title"`

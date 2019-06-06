@@ -2,16 +2,16 @@ package EpitechFetcher
 
 import (
 	"encoding/json"
-	"fmt"
-	"github.com/lbrulet/EpitechFetcher/models/user"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/lbrulet/EpitechFetcher/models/user"
 
 	"github.com/lbrulet/EpitechFetcher/models"
 )
 
+//FetchIntranetUser going to fetch the profil of the user
 func FetchIntranetUser(userInfo models.EpiUser) (user.UserIntra, error) {
-	fmt.Println(userInfo)
 	client := &http.Client{}
 	if req, err := http.NewRequest("GET", "https://intra.epitech.eu/"+userInfo.AutoLogin+"/user?format=json", nil); err != nil {
 		return user.UserIntra{}, err
@@ -24,7 +24,7 @@ func FetchIntranetUser(userInfo models.EpiUser) (user.UserIntra, error) {
 			if err != nil {
 				return user.UserIntra{}, err
 			} else {
-				usr := NewUserIntra()
+				usr := user.NewUserIntra()
 				if err := json.Unmarshal(data, &usr); err != nil {
 					return user.UserIntra{}, err
 				} else {
@@ -39,10 +39,10 @@ func FetchIntranetUser(userInfo models.EpiUser) (user.UserIntra, error) {
 	}
 }
 
+//FetchIntranetNote going to fetch note of the user
 func FetchIntranetNote(userInfo models.EpiUser) (user.CursusIntra, error) {
-	fmt.Println(userInfo)
 	client := &http.Client{}
-	if req, err := http.NewRequest("GET", "https://intra.epitech.eu/"+userInfo.AutoLogin+"/user/"+ userInfo.Login+"/notes/?format=json", nil); err != nil {
+	if req, err := http.NewRequest("GET", "https://intra.epitech.eu/"+userInfo.AutoLogin+"/user/"+userInfo.Login+"/notes/?format=json", nil); err != nil {
 		return user.CursusIntra{}, err
 	} else {
 		response, err := client.Do(req)
@@ -53,11 +53,10 @@ func FetchIntranetNote(userInfo models.EpiUser) (user.CursusIntra, error) {
 			if err != nil {
 				return user.CursusIntra{}, err
 			} else {
-				cursus := NewNoteIntra()
+				cursus := user.NewNoteIntra()
 				if err := json.Unmarshal(data, &cursus); err != nil {
 					return user.CursusIntra{}, err
 				} else {
-					fmt.Println(string(data))
 					if err := response.Body.Close(); err != nil {
 						return user.CursusIntra{}, err
 					} else {

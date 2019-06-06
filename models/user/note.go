@@ -1,5 +1,9 @@
 package user
 
+func NewNoteIntra() CursusIntra {
+	return CursusIntra{}
+}
+
 type CursusIntra struct {
 	Modules []ModuleInfos `json:"modules"`
 	Notes   []NoteInfos   `json:"notes"`
