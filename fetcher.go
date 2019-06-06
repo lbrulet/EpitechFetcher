@@ -5,9 +5,8 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/lbrulet/EpitechFetcher/models/user"
-
 	"github.com/lbrulet/EpitechFetcher/models"
+	"github.com/lbrulet/EpitechFetcher/models/user"
 )
 
 //FetchIntranetUser going to fetch the profil of the user
