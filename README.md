@@ -1,18 +1,4 @@
-<!-- PROJECT SHIELDS -->
-[![Build Status][build-shield]]()
-[![Contributors][contributors-shield]]()
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/luc-brulet/]
-
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://golang.org/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Epitech.png/150px-Epitech.png" alt="Logo" width="150" height="100">
-  </a>
-
-  <h3 align="center">EpitechFetcher</h3>
-</p>
+# EPITECHFETCHER
 
 ## Description
 EpitechFetcher is a golang library that fetch the user informations with his autologin
