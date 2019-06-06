@@ -1,3 +1,4 @@
+<!-- PROJECT SHIELDS -->
 [![Build Status][build-shield]]()
 [![Contributors][contributors-shield]]()
 [![MIT License][license-shield]][license-url]
@@ -7,7 +8,7 @@
 <br />
 <p align="center">
   <a href="https://golang.org/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Epitech.png/150px-Epitech.png" alt="Logo" width="80" height="80">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Epitech.png/150px-Epitech.png" alt="Logo" width="150" height="100">
   </a>
 
   <h3 align="center">EpitechFetcher</h3>
