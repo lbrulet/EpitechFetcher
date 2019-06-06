@@ -4,7 +4,7 @@
 EpitechFetcher is a golang library that fetch the user informations with his autologin
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [go get](https://golang.org/cmd/go/) to install EpitechFetcher.
 
 ```bash
 go get -v github.com/lbrulet/EpitechFetcher
