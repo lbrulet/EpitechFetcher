@@ -22,7 +22,7 @@ import (
 )
 
 func main() {
-	if user, notes, err := EpitechFetcher.Link("auth-c6ec93ec7229061b2564fb41c575d37c915cc55e", "luc.brulet@epitech.eu"); err != nil {
+	if user, notes, err := EpitechFetcher.Link("auth-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "luc.brulet@epitech.eu"); err != nil {
 		fmt.Println(err)
 	} else {
 		fmt.Println(user, notes)
